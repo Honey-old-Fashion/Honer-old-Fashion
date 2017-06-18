@@ -13,6 +13,7 @@
 * @return None
 *******************************************************/
 SystemManager::SystemManager() {
+	
 }
 
 /******************************************************
@@ -62,17 +63,19 @@ void SystemManager::mUpdate() {
 
 	SceneMgr.mInit();
 
-	while (ProcessMessage() != -1) {
+	while (ProcessMessage() != -1 ) {
 		mKeepFPS();
-
+		ClearDrawScreen();
+		
 		SceneMgr.mUpdate();
 		SceneMgr.mRender();
+
+		ScreenFlip();
 
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) {
 			break;
 		}
-		ClearDrawScreen();
-
+		
 	#ifdef _DEBUG
 		clsDx();
 	#endif

@@ -28,6 +28,7 @@ private:
 	DWORD m_lastTime;	// @brief 前回のループ時におけるFPS値
 	SceneManager SceneMgr;
 
+
 };
 
 static int Error(LPCTSTR _errorName, int _errorCode); 

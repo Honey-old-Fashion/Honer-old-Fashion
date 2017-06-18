@@ -3,6 +3,9 @@
 #include "ISceneChanger.h"
 class SceneTitle : public SceneTask {
 
+private:
+	bool m_nextSceneFlag[2];
+
 public:
 	SceneTitle(ISceneChanger* changer);
 	~SceneTitle();
@@ -11,6 +14,7 @@ public:
 	virtual void mUpdate() override;
 	virtual void mRender() override;
 	virtual void mFinal() override;
+	
 	
 };
 

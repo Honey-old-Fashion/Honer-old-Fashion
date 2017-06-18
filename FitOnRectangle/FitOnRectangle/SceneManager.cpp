@@ -3,6 +3,7 @@
 #include "SceneTitle.h"
 #include "SceneMenu.h"
 
+
 SceneManager::SceneManager() : mNextScene(eScene_Null) {
 	mScene = (IScene*) new SceneTitle(this);
 }

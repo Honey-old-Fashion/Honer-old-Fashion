@@ -18,7 +18,6 @@ public:
 	virtual void mRender() override;
 	virtual void mFinal() override;
 	void mChangeScene(eSceneName _NextScene) override;
-	
 };
 
 #endif // !_SCENEMANAGER_H_
