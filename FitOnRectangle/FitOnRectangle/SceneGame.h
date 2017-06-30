@@ -1,6 +1,7 @@
 #pragma once
 #include "SceneTask.h"
 #include "ISceneChanger.h"
+#include "CharacterManager.h"
 class SceneGame : public SceneTask {
 public:   
 	SceneGame(ISceneChanger* _changer);
@@ -11,5 +12,6 @@ public:
 	virtual void mRender() override;
 	virtual void mFinal() override;
 
+	CharacterManager charMgr;
 };
 
