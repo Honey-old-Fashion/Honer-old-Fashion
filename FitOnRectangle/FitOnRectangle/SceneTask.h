@@ -1,3 +1,8 @@
+/**********************************************************************************************
+* !@file  SceneTask.h
+* @brief  各シーンで共通のメソッドを宣言
+* @author Sugiyama Ryo
+******************************************************************************************/
 #ifndef _SCENETASK_H_
 #define _SCENETASK_H_
 
@@ -14,8 +19,7 @@ protected:
 	int mSoundPlayFlag = 0;
 	ISceneChanger* m_changeScene;
 
-	void mGameEnd();
-	virtual BOOL mDrawSelectBox(int _x, int _y, int _width, int _height, LPCTSTR _text = NULL, bool _clickFlag =true ,int _buttonColor = GetColor(0, 0, 0), int _textColor = GetColor(255, 255, 255));
+	virtual BOOL mDrawSelectBox(int _x, int _y, int _width, int _height, int _gHandle, bool _clickFlag = true);
 
 public:
 	SceneTask(ISceneChanger* _changer);

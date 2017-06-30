@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _ISCENECHANGER_H_
+#define _ISCENECHANGER_H_
 
 typedef enum eSceneName {
 	eScene_Title,
@@ -17,3 +18,4 @@ public:
 
 };
 
+#endif // !_ISCENECHANGER_H_

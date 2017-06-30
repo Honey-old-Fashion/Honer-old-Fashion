@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _ISCENE_H_
+#define _ISCENE_H_
 
 #if _DEBUG
 #include <crtdbg.h>
@@ -14,3 +15,4 @@ public:
 	virtual void mFinal() = 0;
 };
 
+#endif // !_ISCENE_H_

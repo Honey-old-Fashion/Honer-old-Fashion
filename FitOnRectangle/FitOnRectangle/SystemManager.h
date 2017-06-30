@@ -3,7 +3,6 @@
 * @brief  Control System 
 * @author Sugiyama Ryo
 ******************************************************************************************/
- 
 
 #ifndef _SYSTEMMANAGET_H_
 #define _SYSTEMMANAGER_H_

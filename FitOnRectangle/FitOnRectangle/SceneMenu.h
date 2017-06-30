@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _SCENEMENU_H_
+#define _SCENEMENU_H_
+
 #include "SceneTask.h"
 #include "ISceneChanger.h"
 
@@ -12,3 +14,4 @@ public:
 	virtual void mFinal() override;
 };
 
+#endif // !_SCENEMENU_H_

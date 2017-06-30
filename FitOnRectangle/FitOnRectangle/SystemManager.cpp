@@ -45,11 +45,7 @@ int SystemManager::mInitialize() {
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	if (DxLib_Init() == -1) {
-
-	#ifdef _DEBUG
-		printfDx("DXライブラリの初期化に失敗しました");
-	#endif 
-		exit(-1);
+		Error("Dxライブラリの初期化に失敗しました。", -1);
 	}
 	return 0;
 
@@ -92,10 +88,7 @@ void SystemManager::mUpdate() {
 int SystemManager::mFainalize() {
 
 	if (DxLib_End() == -1) {
-	#ifdef _DEBUG
-		printfDx("DXライブラリの終了に失敗しました");
-	#endif
-		return -2;
+		Error("DXライブラリの終了に失敗しました", -2);
 	}
 	return 0;
 }
