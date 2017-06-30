@@ -13,6 +13,7 @@ SceneGame::~SceneGame() {
 }
 
 void SceneGame::mInit() {
+	charMgr.mInit();
 }
 
 void SceneGame::mUpdate() {
@@ -23,10 +24,12 @@ void SceneGame::mUpdate() {
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
 		m_changeScene->mChangeScene(eScene_Title);
 	}
+
+	charMgr.mUpdate();
 	
 }
 void SceneGame::mRender() {
-
+	charMgr.mRender();
 }
 
 void SceneGame::mFinal() {
