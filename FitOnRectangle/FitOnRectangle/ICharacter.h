@@ -1,15 +1,12 @@
-/*******************************************
-
-* !@file ICharacter.h
-
-* @brief キャラクター関連のクラスに継承させる
-
-* @author 高口剛史
-
-*******************************************/
+#pragma once
 class ICharacter {
-
 public:
-	virtual void mInit(){}  // 初期化
-	virtual void mDraw(){}  // 描画
+
+	ICharacter() {} 
+	virtual ~ICharacter() = default;
+
+	virtual void mInit() = 0;
+	virtual void mDraw() = 0;
+	virtual void mUpdate() = 0;
 };
+

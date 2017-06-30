@@ -1,16 +1,16 @@
-/******************************************
-
-* !@file CharacterManager.h
-
-* @brief キャラクター管理
-
-* @author 高口剛史
-
-*******************************************/
+#pragma once
 #include "ICharacter.h"
+#include "CharacterTask.h"
+class Rectangle;
 
 class CharacterManager :public ICharacter {
 public:
-	void mInit() override; // 初期化
-	void mDraw() override; // 描画
+	CharacterManager();
+	~CharacterManager();
+
+	CharacterTask* m_character[3];
+	
+	virtual void mInit() override;
+	virtual void mDraw() override;
+	virtual void mUpdate() override;
 };
