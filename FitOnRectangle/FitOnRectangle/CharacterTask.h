@@ -20,6 +20,8 @@ private:
 	bool m_activeFlg;
 	bool m_canMoveRight;
 	bool m_canMoveLeft;
+	POINT m_gimmickPosition[255];
+	int m_gimmickId[255];
 public:
 	CharacterTask();
 	~CharacterTask();
@@ -30,6 +32,14 @@ public:
 	virtual void mUpdate() override;
 	virtual void mFinal() override;
 	virtual void mMove();
+
+	virtual void mSetGimmickPosition(POINT _position) {
+		m_gimmickPosition[0] = _position;
+	}
+
+	virtual void mSetGimmickId(int _id) {
+		m_gimmickId[0] = _id;
+	}
 
 	virtual inline void mSetActiveFlg(bool _activeFlg) {
 		m_activeFlg = _activeFlg;
