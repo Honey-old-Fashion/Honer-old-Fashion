@@ -14,12 +14,12 @@ class Rectangle :public CharacterTask {
 private:
 	POINT m_rectPosition[COLOR_NUM];  // 四角形の座標を色別に格納する
 	bool m_livingFlg[COLOR_NUM];      // 四角形のアクティブ状態を色別に格納する
+	unsigned int createColor;
 public:
-	Rectangle();
+	Rectangle(eColor, int, int);
 	~Rectangle();
 
 	void mInit() override;
-	void mCreate(eColor, int, int) override;
 	void mRender() override;
 	void mUpdate() override;
 	void mFinal() override;

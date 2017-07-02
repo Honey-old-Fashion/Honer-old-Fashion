@@ -3,11 +3,11 @@
 class DropGimmick : GimmickTask
 {
 public:
-	DropGimmick();
+	DropGimmick(eColor, int ,int);
 	~DropGimmick();
-	virtual void mInit() override;
-	virtual void mUpdate() override;
+	virtual void mInit() override {};
+	virtual void mUpdate() override {};
 	virtual void mRender() override;
-	virtual void mFinal() override;
+	virtual void mFinal() override {};
 };
 

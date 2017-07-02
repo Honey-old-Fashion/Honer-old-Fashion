@@ -19,8 +19,7 @@ private:
 	int mInitialize();
 	int mFainalize();
 	void mUpdate();
-	void mKeepFPS();
-
+	
 
 	friend int APIENTRY _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int);
 

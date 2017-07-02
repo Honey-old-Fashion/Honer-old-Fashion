@@ -1,20 +1,19 @@
-#include "GimmickManager.h"
+#include "GimmickTask.h"
 #include <Windows.h>
 
 #define GIMMICKSIZE 15
 
-class GateGimmick : public GimmickTask
-{
+class GateGimmick : public GimmickTask {
 private:
-	POINT m_gate;
 	
 public:
-	GateGimmick();
+	GateGimmick(eColor, int, int);
 	~GateGimmick();
-	virtual void mInit() override;
-	virtual void mUpdate() override;
-	virtual void mRender() override;
-	virtual void mFinal() override;
+	virtual void mInit() {}
+	virtual void mUpdate() {};
+	virtual void mRender();
+	virtual void mFinal() {}
+
 
 };
 

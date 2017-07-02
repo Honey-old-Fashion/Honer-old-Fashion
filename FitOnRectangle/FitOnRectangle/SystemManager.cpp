@@ -32,11 +32,15 @@ SystemManager::~SystemManager() {
 *******************************************************/
 int SystemManager::mInitialize() {
 
+	m_lastTime = 0;
+
 	ChangeWindowMode(TRUE);
 
 	SetMainWindowText("FitOnRectangle");
 
 	GetMouseDispFlag();
+
+	SetUse3DFlag(FALSE);
 
 	SetDoubleStartValidFlag(FALSE);
 
@@ -61,11 +65,20 @@ void SystemManager::mUpdate() {
 	SceneMgr.mInit();
 
 	while (ProcessMessage() != -1 ) {
-		mKeepFPS();
 		ClearDrawScreen();
 		
 		SceneMgr.mUpdate();
 		SceneMgr.mRender();
+
+		const DWORD waitTime = 16;	//60FPS
+
+		DWORD nTime = timeGetTime();
+		DWORD rTime = nTime - m_lastTime;
+		m_lastTime = nTime;
+
+		if (rTime < waitTime) {
+			Sleep(waitTime - rTime);
+		}
 
 		ScreenFlip();
 
@@ -93,22 +106,6 @@ int SystemManager::mFainalize() {
 	return 0;
 }
 
-/******************************************************
-* @brief  Get now FPS and keep 60 FPS
-* @param  None
-* @return None
-*******************************************************/
-void SystemManager::mKeepFPS() {
-	const DWORD waitTime = 16;	//60FPS
-
-	DWORD nTime = timeGetTime();
-	DWORD rTime = nTime - m_lastTime;
-	m_lastTime = nTime;
-
-	if (rTime < waitTime) {	
-		Sleep(waitTime - rTime);
-	}
-}
 
 /******************************************************
 * @brief  エラーが起こったらエラー番号とともに強制終了する関数

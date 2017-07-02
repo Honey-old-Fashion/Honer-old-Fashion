@@ -21,7 +21,7 @@ public:
 	~Triangle();
 
 	void mInit() override;
-	void mCreate(eColor, int, int) override;
+//	void mCreate(eColor, int, int) override;
 	void mRender() override;
 	void mUpdate() override;
 	void mFinal() override;

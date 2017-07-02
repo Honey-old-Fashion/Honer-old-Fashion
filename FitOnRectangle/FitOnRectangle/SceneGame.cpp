@@ -3,7 +3,7 @@
 
 
 SceneGame::SceneGame(ISceneChanger* _changer) : SceneTask(_changer) {
-
+	obj = new FirstStage;
 
 }
 
@@ -13,7 +13,7 @@ SceneGame::~SceneGame() {
 }
 
 void SceneGame::mInit() {
-	charMgr.mInit();
+	obj->mSetUp();
 }
 
 void SceneGame::mUpdate() {
@@ -25,13 +25,13 @@ void SceneGame::mUpdate() {
 		m_changeScene->mChangeScene(eScene_Title);
 	}
 
-	charMgr.mUpdate();
+	obj->mUpdate();
 	
 }
 void SceneGame::mRender() {
-	charMgr.mRender();
+	obj->mRender();
 }
 
 void SceneGame::mFinal() {
-
+	obj->mTearDown();
 }

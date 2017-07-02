@@ -6,25 +6,41 @@
 #define OBJECTSIZE 40
 
 
+
 class GimmickTask :public IObject
 {
 protected:
+	bool activeFlag;
 	POINT pPlayer;
 	POINT pGimmick;
-	int m_color;
+	unsigned int m_color;
 	bool m_gimmickOpenFlag;
+	int m_colorID;
 
-	virtual void mInit() override {}
-	virtual void mUpdate() override {}
-	virtual void mRender()override {}
-	virtual void mFinal() override {}
 
 public:
 	GimmickTask();
 	~GimmickTask();
 
-	virtual void mSetPlayerPointVecter2(POINT,int);
-	virtual bool mHitTest();
+	inline POINT mGetGimmickPointVecter2() {
+		return pGimmick;
+	}
 
+	inline int mGetGimmickColorId() {
+		return m_colorID;
+	}
+
+	inline void mSetActiveFlag(bool _activeFlag) {
+		activeFlag = _activeFlag;
+	}
+
+	inline bool mGetActiveFlag() {
+		return activeFlag;
+	}
+
+	virtual void mInit() override {}
+	virtual void mUpdate() override {}
+	virtual void mRender()override {}
+	virtual void mFinal() override {}
 };
 

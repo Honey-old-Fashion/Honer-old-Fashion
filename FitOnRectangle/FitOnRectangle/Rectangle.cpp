@@ -3,12 +3,23 @@
 
 
 
-Rectangle::Rectangle(){
-	for (int i = 0; i < COLOR_NUM; i++) {
-		m_rectPosition[i].x = 0;
-		m_rectPosition[i].y = 0;
-		m_livingFlg[i] = false;
+Rectangle::Rectangle(eColor _createColor, int _posX, int _posY){
+	
+	switch (_createColor) {
+	case eColor_Red:
+		createColor = RED;
+		break;
+
+	case eColor_Green:
+		createColor = GREEN;
+		break;
+
+	case eColor_Blue:
+		createColor = BLUE;
+		break;
 	}
+	m_characterPosition.x = _posX;
+	m_characterPosition.y = _posY;
 }
 
 
@@ -37,14 +48,14 @@ void Rectangle::mInit() {
 
 * @return None
 
-***********************************************/
+***********************************************
 void Rectangle::mCreate(eColor _color, int _x, int _y) {
 
 	m_rectPosition[_color].x = _x;
 	m_rectPosition[_color].y = _y;
 	m_livingFlg[_color] = true;
 }
-
+//*/
 /***********************************************
 
 * @brief }Œ`‚Ì•`‰æ
@@ -55,6 +66,7 @@ void Rectangle::mCreate(eColor _color, int _x, int _y) {
 
 ***********************************************/
 void Rectangle::mRender() {
+	/*
 	// Ô‚¢}Œ`‚Ì•`‰æ
 	if (m_livingFlg[eColor_Red] == true) {
 
@@ -78,6 +90,10 @@ void Rectangle::mRender() {
 			m_rectPosition[eColor_Blue].x + CHAR_SIZE, m_rectPosition[eColor_Blue].y + CHAR_SIZE,
 			BLUE, true);
 	}
+	*/
+	DrawBox(m_characterPosition.x, m_characterPosition.y,
+		m_characterPosition.x + CHAR_SIZE, m_characterPosition.y + CHAR_SIZE,
+		createColor, true);
 }
 
 /***********************************************
@@ -90,7 +106,7 @@ void Rectangle::mRender() {
 
 ***********************************************/
 void Rectangle::mUpdate() {
-
+	CharacterTask::mMove();
 }
 
 /***********************************************

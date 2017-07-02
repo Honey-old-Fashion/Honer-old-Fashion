@@ -12,53 +12,13 @@
 
 ***********************************************/
 CharacterTask::CharacterTask(){
-	m_characterPosition.x = 50;
-	m_characterPosition.y = 50;
+	
 }
 
-
-CharacterTask::~CharacterTask()
-{
-}
-
-/***********************************************
-
-* @brief ‰Šú‰»
-
-* @param[in] None
-
-* @return None
-
-***********************************************/
-void CharacterTask::mInit() {
+CharacterTask::~CharacterTask() {
 
 }
 
-/***********************************************
-
-* @brief •`‰æ
-
-* @param[in] None
-
-* @return None
-
-***********************************************/
-void CharacterTask::mRender() {
-
-}
-
-/***********************************************
-
-* @brief XV
-
-* @param[in] None
-
-* @return None
-
-***********************************************/
-void CharacterTask::mUpdate() {
-
-}
 
 /***********************************************
 
@@ -72,62 +32,32 @@ void CharacterTask::mUpdate() {
 void CharacterTask::mMove() {
 	//if (m_activeFlg == true) {
 		if (CheckHitKey(KEY_INPUT_RIGHT) != 0) {
-			m_characterPosition.x += 10;
+			m_characterPosition.x += 5;
 		}
 		if (CheckHitKey(KEY_INPUT_LEFT) != 0) {
-			m_characterPosition.x -= 10;
+			m_characterPosition.x -= 5;
 		}
 	//}
 }
 
-/***********************************************
+CharacterTask::HitTestData CharacterTask::HitTest(int _gimmickID, int _gimmickType ,POINT _gimmickPos) {
+	HitTestData data;
+	switch (_gimmickType) {
+	case 4:
 
-* @brief I—¹ˆ—
+		break;
+	case 5:
 
-* @param[in] None
+		break;
+	case 6:
+		break;
+	case 10:
+		break;
+	default:
+		break;
+	}
+	data.gimmiclID = _gimmickID;
+	
 
-* @return None
-
-***********************************************/
-void CharacterTask::mFinal() {
-
-}
-
-/***********************************************
-
-* @brief À•W‚ğ•Ô‚·
-
-* @param[in] None
-
-* @return m_characterPosition(À•W‚ğŠi”[‚·‚éPOINTŒ^•Ï”)
-
-***********************************************/
-POINT CharacterTask::mGetPosition() {
-	return m_characterPosition;
-}
-
-/***********************************************
-
-* @brief ‰E•ûŒü‚Ö‚ÌˆÚ“®‚Ìflg‚ğæ“¾‚·‚é
-
-* @param[in] _flg
-
-* @return None
-
-***********************************************/
-void CharacterTask::mSetRightMoveFlg(bool _flg) {
-	m_canMoveRight = _flg;
-}
-
-/***********************************************
-
-* @brief ¶•ûŒü‚Ö‚ÌˆÚ“®‚Ìflg‚ğæ“¾‚·‚é
-
-* @param[in] _flg
-
-* @return None
-
-***********************************************/
-void CharacterTask::mSetLeftMoveFlg(bool _flg) {
-	m_canMoveLeft = _flg;
+	return data;
 }

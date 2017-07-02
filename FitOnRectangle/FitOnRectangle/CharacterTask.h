@@ -1,9 +1,10 @@
-#pragma once
+#ifndef _CHARACTERTASK_H_
+#define _CHARACTERTASK_H_
+
 #include "Windows.h"
 #include "IObject.h"
-#include "Color.h"
 
-#define CHAR_SIZE 100  // キャラクターのサイズ
+#define CHAR_SIZE 40	// キャラクターのサイズ
 
 /*******************************************************************
 
@@ -15,33 +16,33 @@
 
 *******************************************************************/
 class CharacterTask : public IObject {
-private:
+protected:
 	POINT m_characterPosition;
+	
 	bool m_activeFlg;
 	bool m_canMoveRight;
 	bool m_canMoveLeft;
+
+	struct HitTestData {
+		bool hitFlag;
+		int gimmiclID;
+	};
+
 public:
 	CharacterTask();
 	~CharacterTask();
 
-	virtual void mInit() override;
-	virtual void mCreate(eColor, int, int){};
-	virtual void mRender() override;
-	virtual void mUpdate() override;
-	virtual void mFinal() override;
+	virtual void mInit() override {};
+	virtual void mRender() override {};
+	virtual void mUpdate() override {};
+	virtual void mFinal() override {};
 	virtual void mMove();
 
-	virtual inline void mSetActiveFlg(bool _activeFlg) {
-		m_activeFlg = _activeFlg;
-	}
-	virtual inline void mSetPosition(POINT _position, eColor _color) {};
 
-	POINT mGetPosition();
+	inline void mSetRightMoveFlg(bool _flg) { m_canMoveRight = _flg; }
+	inline void mSetLeftMoveFlg(bool _flg) { m_canMoveLeft = _flg; }
 
-	virtual int mGetFloorY(eColor) = 0;
-	virtual int mGetCenterX(eColor) = 0;
-
-	void mSetRightMoveFlg(bool);
-	void mSetLeftMoveFlg(bool);
+	HitTestData HitTest(int _gimmickID, int _gimmickType ,POINT _gimmickPos);
 };
 
+#endif // !_CHARACTERTASK_H_

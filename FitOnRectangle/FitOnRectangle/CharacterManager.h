@@ -20,5 +20,5 @@ public:
 	CharacterManager();
 	~CharacterManager();
 
-	CharacterTask* m_character[3];
+	IObject* m_character[3];
 };
