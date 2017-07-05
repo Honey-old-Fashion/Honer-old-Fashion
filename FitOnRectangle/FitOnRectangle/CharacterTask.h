@@ -22,7 +22,18 @@ protected:
 	bool m_activeFlg;
 	bool m_canMoveRight;
 	bool m_canMoveLeft;
-
+	bool m_moveDownFlag;
+	bool m_canJampFlag;
+	int count;
+	const int speed = 4;
+	const char cm_neutral = 0;
+	const char cm_up = 1;
+	const char cm_down = 2;
+	const int cm_ceil = 10;
+	const int cm_floor = 100;
+	char m_jumpFlag;
+	int m_jumpSpeed;
+	int m_jumpTopPosition;
 	struct HitTestData {
 		bool hitFlag;
 		int gimmiclID;

@@ -21,12 +21,10 @@ void SceneGame::mUpdate() {
 	printfDx("game\nTキーでタイトルへ");
 #endif
 	SceneTask::mRender();
-	if (CheckHitKey(KEY_INPUT_T) != 0) {
-		m_changeScene->mChangeScene(eScene_Title);
-	}
-
 	obj->mUpdate();
-	
+	if (obj->clearFlag == true) {
+		m_changeScene->mChangeScene(eScene_Result);
+	}
 }
 void SceneGame::mRender() {
 	obj->mRender();

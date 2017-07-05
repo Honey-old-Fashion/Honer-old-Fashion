@@ -33,7 +33,7 @@ GateGimmick::~GateGimmick() {
 
 void GateGimmick::mRender() {
 
-	if (activeFlag) {
+	if (activeFlag == true) {
 
 		DrawBox(pGimmick.x, pGimmick.y,
 			pGimmick.x + OBJECTSIZE,
@@ -45,7 +45,7 @@ void GateGimmick::mRender() {
 		DrawLine(pGimmick.x, pGimmick.y + OBJECTSIZE,
 			pGimmick.x + OBJECTSIZE,
 			pGimmick.y + OBJECTSIZE,
-			m_color);
+			GetColor(255, 255, 255));
 	}
 
 }

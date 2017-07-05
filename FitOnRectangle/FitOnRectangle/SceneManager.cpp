@@ -2,7 +2,7 @@
 #include "SceneGame.h"
 #include "SceneTitle.h"
 #include "SceneMenu.h"
-
+#include "SceneResult.h"
 
 SceneManager::SceneManager() : mNextScene(eScene_Null) {
 	mScene = (IScene*) new SceneTitle(this);
@@ -33,6 +33,9 @@ void SceneManager::mUpdate() {
 			break;
 		case eScene_Menu:
 			mScene = (IScene*) new SceneMenu(this);
+			break;
+		case eScene_Result:
+			mScene = (IScene*) new SceneResult(this);
 			break;
 		}
 		mNextScene = eScene_Null;

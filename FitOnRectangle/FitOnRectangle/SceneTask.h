@@ -17,7 +17,7 @@ protected:
 	int mGraphicHandle;
 	int mSoundPlayHandle;
 	int mSoundPlayFlag = 0;
-	ISceneChanger* m_changeScene;
+	
 
 	virtual BOOL mDrawSelectBox(int _x, int _y, int _width, int _height, int _gHandle, bool _clickFlag = true);
 
@@ -28,7 +28,7 @@ public:
 	virtual void mUpdate()override {};
 	virtual void mRender()override;
 	virtual void mFinal()override;
-
+	ISceneChanger* m_changeScene;
 };
 
 

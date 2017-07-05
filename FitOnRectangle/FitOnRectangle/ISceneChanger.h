@@ -5,6 +5,7 @@ typedef enum eSceneName {
 	eScene_Title,
 	eScene_Game,
 	eScene_Menu,
+	eScene_Result,
 	eScene_Null
 } eSceneName;
 
