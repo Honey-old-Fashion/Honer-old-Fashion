@@ -3,11 +3,11 @@
 class UpGimmick : GimmickTask
 {
 public:
-	UpGimmick();
+	UpGimmick(eColor,int,int);
 	~UpGimmick();
-	virtual void mInit() override;
-	virtual void mUpdate() override;
+	virtual void mInit(){}
+	virtual void mUpdate(){}
 	virtual void mRender() override;
-	virtual void mFinal() override;
+	virtual void mFinal() {}
 };
 

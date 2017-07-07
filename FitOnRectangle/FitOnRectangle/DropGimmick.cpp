@@ -39,9 +39,6 @@ void DropGimmick::mRender() {
 			m_color);
 	}
 	else {
-		DrawLine(pGimmick.x, pGimmick.y + OBJECTSIZE,
-			pGimmick.x + OBJECTSIZE,
-			pGimmick.y + OBJECTSIZE,
-			m_color);
+		
 	}
 }

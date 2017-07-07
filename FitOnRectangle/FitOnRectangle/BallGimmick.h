@@ -1,5 +1,6 @@
 #include "GimmickManager.h"
 #include "GimmickTask.h"
+#include <Windows.h>
 
 #define MOVE 5
 
@@ -11,12 +12,12 @@ private:
 	int m_amountMoveCnt;
 
 public:
-	BallGimmick();
+	BallGimmick(int,int);
 	~BallGimmick();
-	virtual void mInit() override;
+	virtual void mInit() {}
 	virtual void mUpdate() override;
 	virtual void mRender() override;
-	virtual void mFinal() override;
-	virtual bool mHitTest()override;
+	virtual void mFinal(){}
+
 };
 
