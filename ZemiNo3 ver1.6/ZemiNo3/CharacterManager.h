@@ -2,13 +2,9 @@
 #include "IObject.h"
 #include "CharacterTask.h"
 /********************************************************
-
 * !@file CharacterManager.h
-
 * @brief キャラクターの制御
-
-* @author 高口剛史
-
+* @author Takaguchi Tsuyoshi
 ********************************************************/
 class CharacterManager:public IObject {
 public:

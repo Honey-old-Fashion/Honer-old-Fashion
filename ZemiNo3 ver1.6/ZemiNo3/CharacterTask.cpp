@@ -2,13 +2,9 @@
 #include "DxLib.h"
 
 /***********************************************
-
 * @brief コンストラクタ
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 CharacterTask::CharacterTask(){
 	m_canMoveRight = true;
@@ -26,6 +22,11 @@ CharacterTask::~CharacterTask() {
 
 }
 
+/***********************************************
+* @brief 描画
+* @param[in] None
+* @return None
+***********************************************/
 void CharacterTask::mRender() {
 	if (m_activeFlg == true) {
 		DrawTriangle(
@@ -41,21 +42,16 @@ void CharacterTask::mRender() {
 	}
 }
 
-/***********************************************
-
-* @brief 移動
-
-* @param[in] None
-
-* @return None
-
-***********************************************/
 void CharacterTask::mMove() {
 
 	
 }
 
-
+/***********************************************
+* @brief 当たり判定
+* @param[in] None
+* @return None
+***********************************************/
 CharacterTask::HitTestData CharacterTask::HitTest(int _gimmickID, int _gimmickType ,POINT _gimmickPos) {
 	HitTestData data;
 	switch (_gimmickType) {

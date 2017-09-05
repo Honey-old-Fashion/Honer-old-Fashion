@@ -13,26 +13,18 @@ CharacterManager::~CharacterManager()
 }
 
 /***********************************************
-
 * @brief 初期化
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void CharacterManager::mInit() {
 	m_character[0] = (IObject*)new class Rectangle(eColor_Red, 50, 50);
 }
 
 /***********************************************
-
 * @brief キャラクターの描画
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void CharacterManager::mRender() {
 	// 図形の描画
@@ -40,13 +32,9 @@ void CharacterManager::mRender() {
 }
 
 /***********************************************
-
 * @brief 図形の更新
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void CharacterManager::mUpdate() {
 
@@ -56,13 +44,9 @@ void CharacterManager::mUpdate() {
 }
 
 /***********************************************
-
 * @brief 終了処理
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void CharacterManager::mFinal() {
 

@@ -3,13 +3,9 @@
 #include "Singleton.h"
 #include "CollisionDetection.h"
 /*********************************************************************
-
 * !@file Triangle.h
-
 * @brief 三角形のクラス
-
-* @author 高口剛史
-
+* @author Takaguchi Tsuyoshi
 *********************************************************************/
 
 class Triangle : public CharacterTask{

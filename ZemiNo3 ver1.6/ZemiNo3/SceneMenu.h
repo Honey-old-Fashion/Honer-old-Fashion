@@ -1,3 +1,8 @@
+/*********************************************************
+* !@file  SceneMenu.h
+* @brief  メニューシーンの宣言
+* @author Takaguchi Tsuyoshi
+*********************************************************/
 #ifndef _SCENEMENU_H_
 #define _SCENEMENU_H_
 

@@ -9,7 +9,11 @@ SceneMenu::SceneMenu(ISceneChanger* _changer) : SceneTask(_changer) {
 SceneMenu::~SceneMenu() {
 }
 
-
+/******************************************************
+* @brief  シーンの初期化
+* @param  None
+* @return None
+*******************************************************/
 void SceneMenu::mInit() {
 	mGraphicHandle = LoadGraph("pic/Title.jpg");
 	m_menuUIgHandle[0] = LoadGraph("pic/MENU_BACK.png");
@@ -24,6 +28,11 @@ void SceneMenu::mInit() {
 	DrawMenuUIFlag = false;
 }
 
+/******************************************************
+* @brief  シーンの更新
+* @param  None
+* @return None
+*******************************************************/
 void SceneMenu::mUpdate() {
 #ifdef _DEBUG
 	printfDx("menu");
@@ -149,6 +158,11 @@ void SceneMenu::mUpdate() {
 	
 }
 
+/******************************************************
+* @brief  シーンの描画
+* @param  None
+* @return None
+*******************************************************/
 void SceneMenu::mRender() {
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alphaNum);
 	if (alphaNum <= 255) {
@@ -166,7 +180,11 @@ void SceneMenu::mRender() {
 		SceneTask::mDrawSelectBox(0, -100, 1280, 300, m_menuUIgHandle[5], false);
 	}
 }
-
+/******************************************************
+* @brief  シーンの終了処理
+* @param  None
+* @return None
+*******************************************************/
 void SceneMenu::mFinal() {
 	SceneTask::mFinal();
 }

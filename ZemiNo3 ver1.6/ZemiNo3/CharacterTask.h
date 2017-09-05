@@ -8,13 +8,9 @@
 #define CHAR_SIZE 40	// キャラクターのサイズ
 
 /*******************************************************************
-
 * !@file CharacterTask.h
-
 * @brief キャラクター関連のクラスに継承させる
-
-* @author 高口剛史
-
+* @author Takaguchi Tsuyoshi
 *******************************************************************/
 class CharacterTask : public IObject {
 protected:

@@ -64,7 +64,7 @@ void SceneResult::mUpdate() {
 		m_changeScene->mChangeScene(eScene_Menu);
 
 	}
-
+	// 次のステージへ遷移
 	if (mNextSceneFlag[2] == true) {
 		if(gameManager->GetStageID() == e_Stage::e_StageFirst){
 			gameManager->SetStageID(e_Stage::e_StageSecond);
@@ -76,6 +76,7 @@ void SceneResult::mUpdate() {
 		m_changeScene->mChangeScene(eScene_Game);
 	}
 
+	// テキストのアニメーション
 	switch (m_textFlag) {
 	case 0:
 		m_timeTextX += 5;
@@ -187,7 +188,7 @@ void SceneResult::mRender() {
 		// ボタンの表示
 		mNextSceneFlag[0] = SceneTask::mDrawSelectBox(25, 500, 400, 200, m_resultUIgHandle[0]);
 		mNextSceneFlag[1] = SceneTask::mDrawSelectBox(435, 500, 400, 200, m_resultUIgHandle[1]);
-		
+		// NextStageボタンの表示
 		if (gameManager->GetStageID() != e_Stage::e_StageThird) {
 			mNextSceneFlag[2] = SceneTask::mDrawSelectBox(845, 500, 400, 200, m_resultUIgHandle[2]);
 		}

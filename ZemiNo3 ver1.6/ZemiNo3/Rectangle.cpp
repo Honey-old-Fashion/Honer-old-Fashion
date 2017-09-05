@@ -2,6 +2,11 @@
 #include "DxLib.h"
 #include "GameManager.h"
 
+/***********************************************
+* @brief コンストラクタ
+* @param[in] 色, x座標, y座標
+* @return None
+***********************************************/
 Rectangle::Rectangle(eColor _createColor, int _posX, int _posY) {
 
 	switch (_createColor) {
@@ -31,26 +36,18 @@ Rectangle::~Rectangle() {
 }
 
 /***********************************************
-
 * @brief 初期化
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Rectangle::mInit() {
 
 }
 
 /***********************************************
-
 * @brief 図形の描画
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Rectangle::mRender() {
 	CharacterTask::mRender();
@@ -60,13 +57,9 @@ void Rectangle::mRender() {
 }
 
 /***********************************************
-
 * @brief 四角形の更新
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Rectangle::mUpdate() {
 	m_activeFlg = (thisCharType == gameManager->GetCurrentCharType()) ? true : false;
@@ -90,18 +83,19 @@ void Rectangle::mUpdate() {
 }
 
 /***********************************************
-
 * @brief 終了処理
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Rectangle::mFinal() {
 
 }
 
+/***********************************************
+* @brief 終了処理
+* @param[in] None
+* @return None
+***********************************************/
 void Rectangle::mMove() {
 	if (m_activeFlg == true) {
 		//move Right

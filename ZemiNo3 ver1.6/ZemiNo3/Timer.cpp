@@ -25,6 +25,11 @@ Timer::~Timer(){
 	DeleteFontToHandle(m_fontHandle);
 }
 
+/*************************************************************************
+* @brief タイマーの更新
+* @param[in] 制限時間
+* @return None
+*************************************************************************/
 void Timer::mUpdate(int _maxTime) {
 	// 経過時間の取得
 	time(&Now);
@@ -32,6 +37,11 @@ void Timer::mUpdate(int _maxTime) {
 	msTimeLimit = (int)((Start + _maxTime) - Now);
 }
 
+/*************************************************************************
+* @brief タイマーの表示
+* @param[in] None
+* @return None
+*************************************************************************/
 void Timer::mRender() {
 	DrawFormatStringToHandle(950, 30, GetColor(0, 0, 0), m_fontHandle, "Time:%d Sec", msTimeLimit);
 }

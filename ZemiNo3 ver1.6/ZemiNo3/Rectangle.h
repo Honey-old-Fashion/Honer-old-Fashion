@@ -10,7 +10,7 @@
 
 * @brief 四角形のクラス
 
-* @author 高口剛史
+* @author Takaguchi Tsuyoshi
 
 *************************************************************/
 class Rectangle :public CharacterTask {

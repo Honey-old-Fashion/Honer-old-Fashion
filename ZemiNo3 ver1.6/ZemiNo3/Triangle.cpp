@@ -2,7 +2,11 @@
 #include "DxLib.h"
 
 
-
+/*************************************************************************
+* @brief コンストラクタ
+* @param[in] 色, x座標, y座標
+* @return None
+*************************************************************************/
 Triangle::Triangle(eColor _createColor, int _posX, int _posY) {
 	switch (_createColor) {
 	case eColor_Red:
@@ -31,13 +35,9 @@ Triangle::~Triangle()
 {
 }
 /***********************************************
-
 * @brief 初期化
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Triangle::mInit() {
 	
@@ -45,13 +45,9 @@ void Triangle::mInit() {
 
 
 /***********************************************
-
 * @brief 図形の描画
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Triangle::mRender() {
 	CharacterTask::mRender();
@@ -69,13 +65,9 @@ void Triangle::mRender() {
 }
 
 /***********************************************
-
 * @brief　三角形の更新
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Triangle::mUpdate() {
 	m_activeFlg = (thisCharType == gameManager->GetCurrentCharType()) ? true : false;
@@ -93,18 +85,19 @@ void Triangle::mUpdate() {
 }
 
 /***********************************************
-
 * @brief 終了処理
-
 * @param[in] None
-
 * @return None
-
 ***********************************************/
 void Triangle::mFinal() {
 
 }
 
+/*************************************************************************
+* @brief 移動処理
+* @param[in]
+* @return None
+*************************************************************************/
 void Triangle::mMove() {
 	if (m_activeFlg == true) {
 
